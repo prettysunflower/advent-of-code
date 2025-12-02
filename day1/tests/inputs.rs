@@ -1,4 +1,4 @@
-pub static PUZZLE_INPUT_1: [&str; 10] = [
+pub static PUZZLE_QUESTION_INPUT: [&str; 10] = [
     "L68",
     "L30",
     "R48",
@@ -11,7 +11,7 @@ pub static PUZZLE_INPUT_1: [&str; 10] = [
     "L82"
 ];
 
-pub static PUZZLE_INPUT_2: [&str; 4104] = [
+pub static PUZZLE_PERSONAL_INPUT: [&str; 4104] = [
     "R9",
     "R19",
     "R34",
