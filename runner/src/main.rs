@@ -29,7 +29,8 @@ fn main() {
             println!("Part 2: {}", day1::puzzle_part2(&input));
         },
         2 => {
-            println!("Answer: {}", day2::puzzle(input_file_content.as_str()));
+            println!("Part 1: {}", day2::puzzle_part1(input_file_content.as_str()));
+            println!("Part 2: {}", day2::puzzle_part2(input_file_content.as_str()));
         }
         _ => println!("Invalid day: {}", day),
     }
