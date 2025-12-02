@@ -1,0 +1,20 @@
+name: Rust - Clippy check
+
+on:
+  push:
+  pull_request:
+
+env:
+  CARGO_TERM_COLOR: always
+  # Make sure CI fails on all warnings, including Clippy lints
+  RUSTFLAGS: "-Dwarnings"
+
+jobs:
+  aoc2025:
+    name: "Advent of Code 2025"
+    runs-on: ubuntu-latest-prettysunflower
+    steps:
+      - uses: actions/checkout@v6
+      - name: Run Clippy
+        working-directory: ./2025/rust
+        run: cargo clippy --workspace --all-targets --all-features
