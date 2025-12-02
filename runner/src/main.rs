@@ -21,13 +21,16 @@ fn main() {
     let input_file = args.input;
 
     let input_file_content = fs::read_to_string(&input_file).expect("Failed to read input file");
-    let input: Vec<&str> = input_file_content.split_terminator("\n").collect();
 
     match day {
         1 => {
+            let input: Vec<&str> = input_file_content.split_terminator("\n").collect();
             println!("Part 1: {}", day1::puzzle_part1(&input));
             println!("Part 2: {}", day1::puzzle_part2(&input));
         },
+        2 => {
+            println!("Answer: {}", day2::puzzle(input_file_content.as_str()));
+        }
         _ => println!("Invalid day: {}", day),
     }
 }
