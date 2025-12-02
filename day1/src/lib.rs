@@ -3,7 +3,6 @@ pub fn puzzle(query: Vec<&str>) -> i32 {
     let mut dial_point: i32 = 50;
 
     for line in query.iter() {
-        println!("{}", line);
         if let Some(number_str) = line.strip_prefix("L") {
             let number = number_str.parse::<i32>().expect("Invalid number");
             dial_point -= number;
@@ -21,12 +20,10 @@ pub fn puzzle(query: Vec<&str>) -> i32 {
                 dial_point += 100;
             }
         }
-        
+
         if dial_point == 0 {
             number_of_zero += 1;
         }
-
-        println!("{}", dial_point);
     }
 
     number_of_zero
