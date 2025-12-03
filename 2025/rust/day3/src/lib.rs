@@ -1,4 +1,45 @@
-pub fn puzzle_part1(query: &Vec<&str>) -> usize {
+fn calculate_vec_value(usize_vec: &[usize]) -> usize {
+    let mut sum = 0;
+    for (index, digit) in usize_vec.iter().rev().enumerate() {
+        sum += digit * 10usize.pow(index as u32);
+    }
+    sum
+}
+
+fn find_best_combination(batteries: Vec<usize>, limit: usize) -> usize {
+    let mut best_combination = vec![];
+
+    for battery in batteries {
+        if best_combination.len() < limit {
+            best_combination.push(battery);
+            continue;
+        }
+
+        let mut best_value = calculate_vec_value(&best_combination);
+        let mut temp_best_combination = vec![];
+
+        for i in 0..best_combination.len() {
+            let mut working_vec = best_combination.clone();
+            working_vec.push(battery);
+            working_vec.remove(i);
+            let new_value = calculate_vec_value(&working_vec);
+            if new_value > best_value {
+                temp_best_combination = working_vec;
+                best_value = new_value;
+            }
+        }
+
+        if !temp_best_combination.is_empty() {
+            best_combination = temp_best_combination;
+        }
+    }
+
+    println!("Best combination: {:?}", best_combination);
+    println!("Best value: {:?}", calculate_vec_value(&best_combination));
+    calculate_vec_value(&best_combination)
+}
+
+pub fn puzzle(query: &Vec<&str>, limit: usize) -> usize {
     let mut sum = 0;
     for line in query {
         println!("Line: {}", line);
@@ -12,23 +53,7 @@ pub fn puzzle_part1(query: &Vec<&str>) -> usize {
             )
             .collect();
 
-        let mut max = 0;
-
-        for (index_a, battery_a) in batteries.iter().enumerate() {
-            for (index_b, battery_b) in batteries.iter().enumerate() {
-                if index_a >= index_b {
-                    continue;
-                }
-
-                let value = battery_a * 10 + battery_b;
-                if value > max {
-                    max = value;
-                }
-            }
-        }
-
-        println!("Max value is {}", max);
-        sum += max;
+        sum += find_best_combination(batteries, limit);
     }
 
     sum
