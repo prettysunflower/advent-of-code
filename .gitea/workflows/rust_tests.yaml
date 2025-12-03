@@ -15,8 +15,6 @@ jobs:
       matrix:
         toolchain:
           - stable
-          - beta
-          - nightly
     defaults:
       run:
         working-directory: ./2025/rust
