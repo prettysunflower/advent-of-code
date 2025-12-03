@@ -6,6 +6,8 @@
       <sourceFolder url="file://$MODULE_DIR$/day1/tests" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/day2/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/day2/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/day3/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/day3/tests" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/runner/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/day1/target" />

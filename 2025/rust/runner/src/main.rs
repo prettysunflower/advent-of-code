@@ -31,6 +31,10 @@ fn main() {
         2 => {
             println!("Part 1: {}", day2::puzzle_part1(input_file_content.as_str()));
             println!("Part 2: {}", day2::puzzle_part2(input_file_content.as_str()));
+        },
+        3 => {
+            let input: Vec<&str> = input_file_content.split_terminator("\n").collect();
+            println!("Part 1: {}", day3::puzzle_part1(&input));
         }
         _ => println!("Invalid day: {}", day),
     }
