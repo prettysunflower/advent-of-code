@@ -2,6 +2,10 @@ name: Rust - Tests
 
 on:
   push:
+    branches: ["main"]
+    tags: ["*"]
+    paths:
+      - 2025/rust/**
   pull_request:
 
 env:

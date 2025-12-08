@@ -2,6 +2,10 @@ name: Rust - Clippy check
 
 on:
   push:
+    branches: ["main"]
+    tags: ["*"]
+    paths:
+      - 2025/rust/**
   pull_request:
 
 env:
