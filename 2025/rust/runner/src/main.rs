@@ -37,6 +37,11 @@ fn main() {
             println!("Part 1: {}", day3::puzzle(&input, 2));
             println!("Part 2: {}", day3::puzzle(&input, 12));
         }
+        4 => {
+            let input: Vec<String> = input_file_content.split_terminator("\n").map(|input| {input.to_string()}).collect();
+            println!("Part 1: {:?}", day4::puzzle(input.clone()));
+            println!("Part 2: {:?}", day4::puzzle_part2(input));
+        }
         _ => println!("Invalid day: {}", day),
     }
 }
